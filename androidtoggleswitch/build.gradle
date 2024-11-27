@@ -21,5 +21,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.7.0'  // Use AndroidX AppCompat
-    implementation 'com.github.bat-man000:Android-Toggle-Switch:1.0.0'  // Use the correct version from JitPack
-}
+}// }
