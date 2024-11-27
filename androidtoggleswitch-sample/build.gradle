@@ -1,19 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 33  // Update to a newer compile SDK version
 
     defaultConfig {
         applicationId "com.example.androidtoggleswitch_sample"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 33  // Update target SDK version
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"  // Use AndroidX test runner
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,11 +22,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
-    compile project(':androidtoggleswitch')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'  // Use AndroidX Espresso
+    implementation 'androidx.appcompat:appcompat:1.7.0'  // Use AndroidX AppCompat
+    testImplementation 'junit:junit:4.13.2'
+    implementation project(':androidtoggleswitch')
 }

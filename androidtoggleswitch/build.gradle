@@ -1,32 +1,25 @@
 apply plugin: 'com.android.library'
 
-ext {
-    PUBLISH_GROUP_ID    = 'us.belka'
-    PUBLISH_ARTIFACT_ID = 'androidtoggleswitch'
-    PUBLISH_VERSION     = '1.2.2'
-}
-
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 33  // Update to a newer compile SDK version
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 33  // Update target SDK version
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.7.0'  // Use AndroidX AppCompat
+    implementation 'com.github.bat-man000:Android-Toggle-Switch:1.0.0'  // Use the correct version from JitPack
 }
-
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
