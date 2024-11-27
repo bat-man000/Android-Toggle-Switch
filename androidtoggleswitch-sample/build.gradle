@@ -1,16 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33  // Update to a newer compile SDK version
+    compileSdkVersion 34  // Update to a newer compile SDK version
 
     defaultConfig {
         applicationId "com.example.androidtoggleswitch_sample"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 33  // Update target SDK version
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"  // Use AndroidX test runner
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -25,6 +30,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'  // Use AndroidX Espresso
     implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
     testImplementation 'junit:junit:4.13.2'
     implementation project(':androidtoggleswitch')
 }
